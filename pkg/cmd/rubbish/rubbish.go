@@ -1,4 +1,4 @@
-package waste
+package rubbish
 
 import (
 	"os"
@@ -8,8 +8,8 @@ import (
 
 var (
 	rootCmd = &cobra.Command{
-		Use: "waste",
-		Short: "waste is a move your files/directories to trash box using Go.",
+		Use: "rubbish",
+		Short: "rubbish is a command that chucks out and picks up files and directories.",
 	}
 )
 

@@ -1,4 +1,4 @@
-package waste
+package rubbish
 
 import (
 	"os"
@@ -9,34 +9,34 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var putSubCmd = &cobra.Command{
-	Use: "put",
-	Short: "Throw waste in the trash.",
+var chuckoutSubCmd = &cobra.Command{
+	Use: "chuckout",
+	Short: "chuck out rubbish in the trash box",
 	RunE: func(c *cobra.Command, args []string) error {
 		if len(args) != 1 {
-			return fmt.Errorf("expected 1 arg.")
+			return fmt.Errorf("expected 1 arg")
 		}
-		return put(args[0])
+		return chuckout(args[0])
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(putSubCmd)
+	rootCmd.AddCommand(chuckoutSubCmd)
 }
 
-func put(target string) error {
+func chuckout(target string) error {
 	home, err := os.UserHomeDir()
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
 	}
-	var trash string
+	var rubbish string
 	switch runtime.GOOS {
 		case "darwin":
-			trash = "/.Trash/"
+			rubbish = "/.Trash/"
 		default:
 			return errors.New("unsupported OS") 
 	}
-	if err = os.Rename(target, home + trash + target); err != nil {
+	if err = os.Rename(target, home + rubbish + target); err != nil {
 		fmt.Println(err)
 		return err
 	}
