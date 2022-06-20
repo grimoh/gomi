@@ -1,36 +1,35 @@
-# waste
+# rubbish
 
-waste is a move your files/directories to trash box using Go.
+rubbish is a command that chucks out and picks up files and directories.
 
 ## Install 
 
 ### [asdf](https://asdf-vm.com)
 
-using [asdf plugin]()
+Using [asdf plugin](https://github.com/grimoh/asdf-rubbish).
 
 ```sh
-$ asdf plugin add waste https://github.com/grimoh/asdf-waste.git
-$ asdf install waste latest
-$ asdf global waste latest
+$ asdf plugin add rubbish https://github.com/grimoh/asdf-rubbish.git
+$ asdf install rubbish latest
+$ asdf global rubbish latest
 ```
 
 ### Usage
 
 ```sh
-
-$ waste --help
-waste is a move your files/directories to trash box using Go.
+rubbish is a command that chucks out and picks up files and directories.
 
 Usage:
-  waste [command]
+  rubbish [command]
 
 Available Commands:
+  chuckout    chuck out rubbish in the trash box
   completion  Generate the autocompletion script for the specified shell
   help        Help about any command
-  put         Throw waste in the trash.
 
 Flags:
-  -h, --help   help for waste
+  -h, --help   help for rubbish
 
-Use "waste [command] --help" for more information about a command.
+Use "rubbish [command] --help" for more information about a command.
+
 ```
