@@ -1,4 +1,4 @@
-module github.com/grimoh/waste
+module github.com/grimoh/rubbish
 
 go 1.18
 
