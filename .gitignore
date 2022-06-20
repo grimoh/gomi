@@ -1,4 +1,6 @@
 # Binaries for programs and plugins
+waste
+*.tar.gz
 *.exe
 *.exe~
 *.dll
