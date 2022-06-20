@@ -3,6 +3,7 @@ package waste
 import (
 	"os"
 	"fmt"
+	"runtime"
 	"errors"
 
 	"github.com/spf13/cobra"
@@ -15,16 +16,27 @@ var putSubCmd = &cobra.Command{
 		if len(args) != 1 {
 			return fmt.Errorf("expected 1 arg.")
 		}
-		return convert(args[0])
+		return put(args[0])
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(jstSubCmd)
+	rootCmd.AddCommand(putSubCmd)
 }
 
 func put(target string) error {
-	if err := os.Rename(target, "~/.Trash/"); err != nil {
+	home, err := os.UserHomeDir()
+	if err != nil {
+		fmt.Fprintln(os.Stderr, err)
+	}
+	var trash string
+	switch runtime.GOOS {
+		case "darwin":
+			trash = "/.Trash/"
+		default:
+			return errors.New("unsupported OS") 
+	}
+	if err = os.Rename(target, home + trash + target); err != nil {
 		fmt.Println(err)
 		return err
 	}
