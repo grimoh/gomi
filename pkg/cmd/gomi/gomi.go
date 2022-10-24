@@ -1,4 +1,4 @@
-package rubbish
+package gomi
 
 import (
 	"os"
@@ -8,8 +8,8 @@ import (
 
 var (
 	rootCmd = &cobra.Command{
-		Use: "rubbish",
-		Short: "rubbish is a command that chucks out and picks up files and directories.",
+		Use: "gomi",
+		Short: "gomi is a command that moves files and directories to and from the trash.",
 	}
 )
 

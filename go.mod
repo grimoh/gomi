@@ -1,4 +1,4 @@
-module github.com/grimoh/rubbish
+module github.com/grimoh/gomi
 
 go 1.18
 
